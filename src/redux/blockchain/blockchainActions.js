@@ -60,7 +60,8 @@ export const connect = () => {
         const networkId = await ethereum.request({
           method: "net_version",
         });
-        if (networkId == CONFIG.NETWORK.ID) {
+        //CONFIG.NETWORK.ID
+        if (networkId == 250 ) {  // Add Chain ID 
           const SmartContractObj = new Web3EthContract(
             abi,
             CONFIG.CONTRACT_ADDRESS
@@ -84,7 +85,7 @@ export const connect = () => {
           dispatch(connectFailed(`Change network to ${CONFIG.NETWORK.NAME}.`));
         }
       } catch (err) {
-        dispatch(connectFailed("Something went wrong."));
+        dispatch(connectFailed("You must hold at least 1 Degen Dorm to mint | 1 Degen Droid Per Holder "));
       }
     } else {
       dispatch(connectFailed("Install Metamask."));
