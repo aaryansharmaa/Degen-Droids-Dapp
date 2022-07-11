@@ -99,8 +99,8 @@ function App() {
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(`Are you a Degen Dorms Holder? Claim your free Degen Droid`);
-  const [mintAmount, setMintAmount] = useState(1);
+  const [feedback, setFeedback] = useState(`Are you a Degen Dorms Holder? Claim your free Degen Droids`);
+  const [mintAmount, setMintAmount] = useState(2);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
@@ -139,7 +139,7 @@ function App() {
       })
       .once("error", (err) => {
         console.log(err);
-        setFeedback("You must hold at least 1 Degen Dorm | Only 1 Degen Droid per holder.");
+        setFeedback("You must hold at least 1 Degen Dorm | Only 2 Degen Droid per holder.");
         setClaimingNft(false);
       })
       .then((receipt) => {
@@ -282,7 +282,7 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  CLAIM YOUR FREE DEGEN DROID | 1 PER HOLDER
+                  CLAIM YOUR FREE DEGEN DROIDS | 2 PER HOLDER
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
