@@ -67,11 +67,13 @@ export const ResponsiveWrapper = styled.div`
 
 export const StyledLogo = styled.img`
   width: 200px;
+  border-radius: 50%;
   @media (min-width: 767px) {
     width: 300px;
   }
   transition: width 0.5s;
   transition: height 0.5s;
+
 `;
 
 export const StyledImg = styled.img`
